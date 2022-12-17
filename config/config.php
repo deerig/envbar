@@ -4,7 +4,7 @@ return [
     /**
      * Switch to true or false to enable or disable the package.
      */
-    'enabled' => env('ENVALERT_ENABLED', config('app.env') === 'production' ? false : true),
+    'enabled' => env('ENVBAR_ENABLED', config('app.env') === 'production' ? false : true),
 
     /**
      * The source of the branch name to check.
@@ -16,26 +16,26 @@ return [
      *
      * The GitHub, Bitbucket, and GitLab sources will get the branch name from the latest published tag.
      */
-    'source' => env('ENVALERT_SOURCE', 'git'),
+    'source' => env('ENVBAR_SOURCE', 'git'),
     'sources' => [
         'github' => [
-            'username' => env('ENVALERT_GITHUB_USERNAME', null),
-            'repository' => env('ENVALERT_GITHUB_REPOSITORY', null),
-            'token' => env('ENVALERT_GITHUB_TOKEN', null),
+            'username' => env('ENVBAR_GITHUB_USERNAME', null),
+            'repository' => env('ENVBAR_GITHUB_REPOSITORY', null),
+            'token' => env('ENVBAR_GITHUB_TOKEN', null),
         ],
         'bitbucket' => [
-            'workspace' => env('ENVALERT_BITBUCKET_WORKSPACE', null),
-            'repository' => env('ENVALERT_BITBUCKET_REPOSITORY', null),
-            'token' => env('ENVALERT_BITBUCKET_TOKEN', null),
+            'workspace' => env('ENVBAR_BITBUCKET_WORKSPACE', null),
+            'repository' => env('ENVBAR_BITBUCKET_REPOSITORY', null),
+            'token' => env('ENVBAR_BITBUCKET_TOKEN', null),
         ],
         'gitlab' => [
-            'host' => env('ENVALERT_GITLAB_HOST', null),
-            'project_id' => env('ENVALERT_GITLAB_PROJECT_ID', null),
-            'token' => env('ENVALERT_GITLAB_TOKEN', null),
+            'host' => env('ENVBAR_GITLAB_HOST', null),
+            'project_id' => env('ENVBAR_GITLAB_PROJECT_ID', null),
+            'token' => env('ENVBAR_GITLAB_TOKEN', null),
         ],
         'envoyer' => [
-            'project_id' => env('ENVALERT_ENVOYER_PROJECT_ID', null),
-            'token' => env('ENVALERT_ENVOYER_TOKEN', null),
+            'project_id' => env('ENVBAR_ENVOYER_PROJECT_ID', null),
+            'token' => env('ENVBAR_ENVOYER_TOKEN', null),
         ],
     ],
 

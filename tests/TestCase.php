@@ -1,8 +1,8 @@
 <?php
 
-namespace Deerig\EnvAlert\Tests;
+namespace Deerig\EnvBar\Tests;
 
-use DeeRig\EnvAlert\EnvAlertServiceProvider;
+use DeeRig\EnvBar\EnvBarServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -15,7 +15,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app)
     {
         return [
-            EnvAlertServiceProvider::class,
+            EnvBarServiceProvider::class,
         ];
     }
 

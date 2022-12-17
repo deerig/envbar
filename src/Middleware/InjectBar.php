@@ -1,15 +1,15 @@
 <?php
 
-namespace DeeRig\EnvAlert\Middleware;
+namespace DeeRig\EnvBar\Middleware;
 
 use Closure;
-use DeeRig\EnvAlert\Renderer;
+use DeeRig\EnvBar\Renderer;
 
 class InjectBar
 {
     public function handle($request, Closure $next)
     {
-        if (!config('envalert.enabled')) {
+        if (!config('envbar.enabled')) {
             return $next($request);
         }
 

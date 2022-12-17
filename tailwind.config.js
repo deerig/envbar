@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  prefix: 'envalert-',
+  prefix: 'envbar-',
   content: [
     './resources/views/**/*.blade.php',
     './src/**/*.php'

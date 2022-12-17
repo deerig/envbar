@@ -1,6 +1,6 @@
 <?php
 
-namespace DeeRig\EnvAlert;
+namespace DeeRig\EnvBar;
 
 use Illuminate\Contracts\View\View;
 
@@ -8,11 +8,11 @@ class Renderer
 {
     public function renderHead(): string
     {
-        return '<link href="' . mix('/css/app.css', 'vendor/envalert') . '" rel="stylesheet" />';
+        return '<link href="' . mix('/css/app.css', 'vendor/envbar') . '" rel="stylesheet" />';
     }
 
     public function renderBar(): View
     {
-        return view('envalert::components.bar');
+        return view('envbar::components.bar');
     }
 }

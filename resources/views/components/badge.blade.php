@@ -26,14 +26,14 @@
 @endphp
 
 <span @class([
-    'envalert-text-sm envalert-font-medium envalert-px-2.5 envalert-py-0.5 envalert-mx-1.5 envalert-rounded-xl envalert-shadow-inner',
-    'envalert-bg-blue-200 envalert-text-blue-800' => $color === 'blue',
-    'envalert-bg-purple-200 envalert-text-purple-800' => $color === 'purple',
-    'envalert-bg-green-200 envalert-text-green-800' => $color === 'green',
-    'envalert-bg-red-200 envalert-text-red-800' => $color === 'red',
-    'envalert-bg-yellow-300 envalert-text-yellow-800' => $color === 'yellow',
-    'envalert-bg-amber-300 envalert-text-amber-800' => $color === 'amber',
-    'envalert-bg-orange-300 envalert-text-orange-800' => $color === 'orange',
-    'envalert-bg-indigo-200 envalert-text-indigo-800' => $color === 'indigo',
-    'envalert-bg-gray-200 envalert-text-gray-800' => $color === 'gray',
+    'envbar-text-sm envbar-font-medium envbar-px-2.5 envbar-py-0.5 envbar-mx-1.5 envbar-rounded-xl envbar-shadow-inner',
+    'envbar-bg-blue-200 envbar-text-blue-800' => $color === 'blue',
+    'envbar-bg-purple-200 envbar-text-purple-800' => $color === 'purple',
+    'envbar-bg-green-200 envbar-text-green-800' => $color === 'green',
+    'envbar-bg-red-200 envbar-text-red-800' => $color === 'red',
+    'envbar-bg-yellow-300 envbar-text-yellow-800' => $color === 'yellow',
+    'envbar-bg-amber-300 envbar-text-amber-800' => $color === 'amber',
+    'envbar-bg-orange-300 envbar-text-orange-800' => $color === 'orange',
+    'envbar-bg-indigo-200 envbar-text-indigo-800' => $color === 'indigo',
+    'envbar-bg-gray-200 envbar-text-gray-800' => $color === 'gray',
 ])><b>{{ $label ?? $slot }}</b></span>
