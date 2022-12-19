@@ -18,6 +18,19 @@ php artisan vendor:publish --provider="DeeRig\EnvBar\EnvBarServiceProvider" --ta
 php artisan vendor:publish --provider="DeeRig\EnvBar\EnvBarServiceProvider" --tag="config"
 ```
 
+To keep the assets up-to-date and avoid issues in future updates, you may add the `envbar:publish` command to the
+`post-update-cmd` scripts in your application's `composer.json` file:
+
+```json
+{
+    "scripts": {
+        "post-update-cmd": [
+            "@php artisan envbar:publish --ansi"
+        ]
+    }
+}
+```
+
 ## Configuration
 
 The configuration file is located in `config/envbar.php`. All the necessary instructions are in the file.
