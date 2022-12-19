@@ -2,6 +2,7 @@
 
 namespace DeeRig\EnvBar;
 
+use DeeRig\EnvBar\Console\EnvBarPublish;
 use DeeRig\EnvBar\Middleware\InjectBar;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider;
@@ -23,6 +24,7 @@ class EnvBarServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishAssets();
             $this->publishConfig();
+            $this->publishCommands();
         }
     }
 
@@ -44,5 +46,12 @@ class EnvBarServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../config/config.php' => config_path('envbar.php'),
         ], 'config');
+    }
+
+    public function publishCommands()
+    {
+        $this->commands([
+            EnvBarPublish::class,
+        ]);
     }
 }
