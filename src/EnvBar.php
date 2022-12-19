@@ -4,9 +4,9 @@ namespace DeeRig\EnvBar;
 
 use Exception;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\File;
 
 class EnvBar
 {
@@ -14,18 +14,24 @@ class EnvBar
      * @return string|null
      * @throws Exception
      */
-    public function getVersion(): string | null
+    public function getVersion(): ?string
     {
         $source = config('envbar.source');
 
-        return match($source) {
-            'git' => $this->getGitVersion(),
-            'github' => $this->getGitHubVersion(),
-            'bitbucket' => $this->getBitbucketVersion(),
-            'gitlab' => $this->getGitLabVersion(),
-            'envoyer' => $this->getEnvoyerVersion(),
-            default => null
-        };
+        switch ($source) {
+            case 'git':
+                return $this->getGitVersion();
+            case 'github':
+                return $this->getGitHubVersion();
+            case 'bitbucket':
+                return $this->getBitbucketVersion();
+            case 'gitlab':
+                return $this->getGitLabVersion();
+            case 'envoyer':
+                return $this->getEnvoyerVersion();
+            default:
+                return null;
+        }
     }
 
     public function isRelease(): bool
@@ -94,9 +100,10 @@ class EnvBar
 
         return Cache::rememberForever('envbar::bitbucket::version', function () use ($settings) {
             $response = Http::withToken('Bearer ' . $settings['token'])
-                ->get('https://api.bitbucket.org/2.0/repositories/' . $settings['workspace'] . '/' . $settings['repository'] . '/refs/tags', [
-                    'sort' => 'target.date',
-                ]);
+                ->get('https://api.bitbucket.org/2.0/repositories/' . $settings['workspace'] . '/' . $settings['repository'] . '/refs/tags',
+                    [
+                        'sort' => 'target.date',
+                    ]);
 
             if ($response->ok()) {
                 $tags    = $response->collect();
