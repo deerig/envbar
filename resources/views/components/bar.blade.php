@@ -1,12 +1,13 @@
 {{--<link href="{{ mix('/css/app.css', 'vendor/envbar') }}" rel="stylesheet" />--}}
 
 @php
+    use DeeRig\EnvBar\EnvBar;
     use Illuminate\Support\Str;
 
     $envName = Str::title(Str::replace(['-', '_'], ' ', config('app.env')));
     $env = Str::lower(Str::slug(config('app.env')));
     $envColor = config("envbar.environments.{$env}.color") ?? 'blue';
-    $envBar = (new \DeeRig\EnvBar\EnvBar());
+    $envBar = (new EnvBar());
     $branch = $envBar->getVersion();
     $isRelease = $envBar->isRelease();
 @endphp
@@ -22,7 +23,7 @@
         'envbar-border-l-6 envbar-border-orange-500 envbar-bg-orange-100 envbar-text-orange-700' => $envColor === 'orange',
         'envbar-border-l-6 envbar-border-indigo-500 envbar-bg-indigo-100 envbar-text-indigo-700' => $envColor === 'indigo',
         'envbar-border-l-6 envbar-border-gray-500 envbar-bg-gray-300 envbar-text-gray-800' => $envColor === 'gray'
-    ]) role="alert">
+    ]) role="envbar-alert">
     @lang('envbar::messages.you-are-in-the')
     <x-envbar::badge :color="$envColor">{{ $envName }}</x-envbar::badge>
     @lang('envbar::messages.environment')

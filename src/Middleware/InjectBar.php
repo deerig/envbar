@@ -13,9 +13,10 @@ class InjectBar
             return $next($request);
         }
 
-        $renderer = new Renderer();
         $response = $next($request);
-        $content = $response->getContent();
+        $content  = $response->getContent();
+
+        $renderer = new Renderer();
 
         $headPos = strripos($content, '</head>');
         if ($headPos !== false) {
