@@ -99,7 +99,7 @@ class EnvBar
         $this->validateSettings($settings);
 
         return Cache::rememberForever('envbar::bitbucket::version', function () use ($settings) {
-            $response = Http::withToken('Bearer ' . $settings['token'])
+            $response = Http::withBasicAuth($settings['username'], $settings['token'])
                 ->get('https://api.bitbucket.org/2.0/repositories/' . $settings['workspace'] . '/' . $settings['repository'] . '/refs/tags',
                     [
                         'sort' => 'target.date',
@@ -107,7 +107,7 @@ class EnvBar
 
             if ($response->ok()) {
                 $tags    = $response->collect();
-                $lastTag = $tags->get('values')->first();
+                $lastTag = $tags->get('values')[0];
 
                 return $lastTag['name'];
             }
@@ -133,7 +133,7 @@ class EnvBar
 
         return Cache::rememberForever('envbar::gitlab::version', function () use ($settings) {
             $response = Http::withHeaders(['PRIVATE-TOKEN' => $settings['token']])
-                ->get($settings['host'] . '/api/v4/projects/' . $settings['project_id'] . '/repository/tags');
+                ->get('https://' . $settings['host'] . '/api/v4/projects/' . $settings['project_id'] . '/repository/tags');
 
             if ($response->ok()) {
                 $tags    = $response->collect();
