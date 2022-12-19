@@ -1,8 +1,8 @@
 <?php
+
 namespace DeeRig\EnvBar;
 
 use DeeRig\EnvBar\Middleware\InjectBar;
-use DeeRig\EnvBar\View\Components\EnvBar;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider;
 
@@ -10,7 +10,7 @@ class EnvBarServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'envbar');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'envbar');
     }
 
     public function boot()
@@ -25,6 +25,7 @@ class EnvBarServiceProvider extends ServiceProvider
             $this->publishConfig();
         }
     }
+
     protected function registerMiddleware($middleware)
     {
         $kernel = $this->app[Kernel::class];
@@ -34,14 +35,14 @@ class EnvBarServiceProvider extends ServiceProvider
     protected function publishAssets()
     {
         $this->publishes([
-            __DIR__.'/../public' => public_path('vendor/envbar'),
+            __DIR__ . '/../public' => public_path('vendor/envbar'),
         ], 'assets');
     }
 
     protected function publishConfig()
     {
         $this->publishes([
-            __DIR__.'/../config/config.php' => config_path('envbar.php'),
+            __DIR__ . '/../config/config.php' => config_path('envbar.php'),
         ], 'config');
     }
 }
