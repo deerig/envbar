@@ -7,6 +7,7 @@ use DeeRig\EnvBar\Tests\TestCase;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\File;
 
 class EnvBarServiceProviderTest extends TestCase
 {
@@ -45,9 +46,9 @@ class EnvBarServiceProviderTest extends TestCase
 
         $configFile = config_path('envbar.php');
 
-        $this->assertTrue(file_exists($configFile));
+        $this->assertTrue(File::exists($configFile));
 
-        unlink($configFile);
+        File::delete($configFile);
     }
 
     /** @test */
@@ -61,10 +62,10 @@ class EnvBarServiceProviderTest extends TestCase
         $cssFile      = public_path('vendor/envbar/css/app.css');
         $manifestFile = public_path('vendor/envbar/mix-manifest.json');
 
-        $this->assertTrue(file_exists($cssFile));
-        $this->assertTrue(file_exists($manifestFile));
+        $this->assertTrue(File::exists($cssFile));
+        $this->assertTrue(File::exists($manifestFile));
 
-        unlink($cssFile);
-        unlink($manifestFile);
+        File::delete($cssFile);
+        File::delete($manifestFile);
     }
 }
