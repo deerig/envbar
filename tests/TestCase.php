@@ -1,10 +1,11 @@
 <?php
 
-namespace Deerig\EnvBar\Tests;
+namespace DeeRig\EnvBar\Tests;
 
 use DeeRig\EnvBar\EnvBarServiceProvider;
+use Orchestra\Testbench\TestCase as BaseTestCase;
 
-class TestCase extends \Orchestra\Testbench\TestCase
+class TestCase extends BaseTestCase
 {
     public function setUp(): void
     {
@@ -12,7 +13,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
         // additional setup
     }
 
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [
             EnvBarServiceProvider::class,
