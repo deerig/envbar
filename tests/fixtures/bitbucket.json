@@ -1,0 +1,93 @@
+{
+    "values": [
+        {
+            "name": "1.0.0",
+            "type": "tag",
+            "message": null,
+            "date": null,
+            "tagger": null,
+            "target": {
+                "type": "commit",
+                "hash": "commit_id",
+                "date": "2022-12-19T05:04:57+00:00",
+                "author": {
+                    "type": "author",
+                    "raw": "Testing <testing@testing.com>",
+                    "user": {
+                        "display_name": "Testing",
+                        "links": {
+                            "self": {
+                                "href": "https://api.bitbucket.org/2.0/users/testing_user"
+                            },
+                            "avatar": {
+                                "href": "https://secure.gravatar.com/avatar/testing.png"
+                            },
+                            "html": {
+                                "href": "https://bitbucket.org/testing_user/"
+                            }
+                        },
+                        "type": "user",
+                        "uuid": "{aa2f5410-5908-4a9a-ba2f-d5a4d73ab4a9}",
+                        "account_id": "60000bfdf7ea2a0107073cfc",
+                        "nickname": "Testing"
+                    }
+                },
+                "message": "Initial commit",
+                "links": {
+                    "self": {
+                        "href": "https://api.bitbucket.org/2.0/repositories/testing/testing/commit/commit_id"
+                    },
+                    "html": {
+                        "href": "https://bitbucket.org/testing/testing/commits/commit_id"
+                    },
+                    "diff": {
+                        "href": "https://api.bitbucket.org/2.0/repositories/testing/testing/diff/commit_id"
+                    },
+                    "approve": {
+                        "href": "https://api.bitbucket.org/2.0/repositories/testing/testing/commit/commit_id/approve"
+                    },
+                    "comments": {
+                        "href": "https://api.bitbucket.org/2.0/repositories/testing/testing/commit/commit_id/comments"
+                    },
+                    "statuses": {
+                        "href": "https://api.bitbucket.org/2.0/repositories/testing/testing/commit/commit_id/statuses"
+                    },
+                    "patch": {
+                        "href": "https://api.bitbucket.org/2.0/repositories/testing/testing/patch/commit_id"
+                    }
+                },
+                "parents": [],
+                "repository": {
+                    "type": "repository",
+                    "full_name": "testing/testing",
+                    "links": {
+                        "self": {
+                            "href": "https://api.bitbucket.org/2.0/repositories/testing/testing"
+                        },
+                        "html": {
+                            "href": "https://bitbucket.org/testing/testing"
+                        },
+                        "avatar": {
+                            "href": "https://bytebucket.org/ravatar/%7Be529ff81-34b4-488d-80c1-4233085595ef%7D?ts=default"
+                        }
+                    },
+                    "name": "Testing",
+                    "uuid": "{e529ff81-34b4-488d-80c1-4233085595ef}"
+                }
+            },
+            "links": {
+                "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/testing/testing/refs/tags/1.0.0"
+                },
+                "commits": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/testing/testing/commits/1.0.0"
+                },
+                "html": {
+                    "href": "https://bitbucket.org/testing/testing/commits/tag/1.0.0"
+                }
+            }
+        }
+    ],
+    "pagelen": 10,
+    "page": 1
+}

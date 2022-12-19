@@ -1,0 +1,12 @@
+[
+    {
+        "name": "1.0.0",
+        "zipball_url": "https://api.github.com/repos/testing/zipball/refs/tags/1.0.0",
+        "tarball_url": "https://api.github.com/repos/testing/tarball/refs/tags/1.0.0",
+        "commit": {
+            "sha": "commit_id",
+            "url": "https://api.github.com/repos/testing/commits/commit_id"
+        },
+        "node_id": "node_id"
+    }
+]
