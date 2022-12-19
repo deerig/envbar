@@ -4,7 +4,7 @@ return [
     /**
      * Switch to true or false to enable or disable the package.
      */
-    'enabled' => env('ENVBAR_ENABLED', config('app.env') === 'production' ? false : true),
+    'enabled'      => env('ENVBAR_ENABLED', config('app.env') === 'production' ? false : true),
 
     /**
      * The source of the branch name to check.
@@ -16,26 +16,27 @@ return [
      *
      * The GitHub, Bitbucket, and GitLab sources will get the branch name from the latest published tag.
      */
-    'source' => env('ENVBAR_SOURCE', 'git'),
-    'sources' => [
-        'github' => [
-            'username' => env('ENVBAR_GITHUB_USERNAME', null),
+    'source'       => env('ENVBAR_SOURCE', 'git'),
+    'sources'      => [
+        'github'    => [
             'repository' => env('ENVBAR_GITHUB_REPOSITORY', null),
-            'token' => env('ENVBAR_GITHUB_TOKEN', null),
+            'username'   => env('ENVBAR_GITHUB_USERNAME', null),
+            'token'      => env('ENVBAR_GITHUB_TOKEN', null),
         ],
         'bitbucket' => [
-            'workspace' => env('ENVBAR_BITBUCKET_WORKSPACE', null),
+            'workspace'  => env('ENVBAR_BITBUCKET_WORKSPACE', null),
             'repository' => env('ENVBAR_BITBUCKET_REPOSITORY', null),
-            'token' => env('ENVBAR_BITBUCKET_TOKEN', null),
+            'username'   => env('ENVBAR_BITBUCKET_USERNAME', null),
+            'token'      => env('ENVBAR_BITBUCKET_TOKEN', null),
         ],
-        'gitlab' => [
-            'host' => env('ENVBAR_GITLAB_HOST', null),
+        'gitlab'    => [
+            'host'       => env('ENVBAR_GITLAB_HOST', null),
             'project_id' => env('ENVBAR_GITLAB_PROJECT_ID', null),
-            'token' => env('ENVBAR_GITLAB_TOKEN', null),
+            'token'      => env('ENVBAR_GITLAB_TOKEN', null),
         ],
-        'envoyer' => [
+        'envoyer'   => [
             'project_id' => env('ENVBAR_ENVOYER_PROJECT_ID', null),
-            'token' => env('ENVBAR_ENVOYER_TOKEN', null),
+            'token'      => env('ENVBAR_ENVOYER_TOKEN', null),
         ],
     ],
 
@@ -48,17 +49,17 @@ return [
      * The available colors are: blue, purple, green, red, yellow, amber, orange, indigo, and gray.
      */
     'environments' => [
-        'local' => [
-            'color' => 'green'
+        'local'   => [
+            'color' => 'green',
         ],
         'sandbox' => [
-            'color' => 'yellow'
+            'color' => 'yellow',
         ],
-        'qa' => [
-            'color' => 'amber'
+        'qa'      => [
+            'color' => 'amber',
         ],
         'staging' => [
-            'color' => 'orange'
+            'color' => 'orange',
         ],
-    ]
+    ],
 ];
