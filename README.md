@@ -8,7 +8,7 @@ the current branch or release.
 To install this package is very simple, you just need to install it with [composer](https://getcomposer.org/):
 
 ```bash
-composer require --dev envbar/envbar
+composer require --dev deerig/envbar
 ```
 
 After installing, you need to publish the assets and the configuration file:
